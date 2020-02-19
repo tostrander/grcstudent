@@ -26,7 +26,7 @@ $f3->route('GET /detail/@sid', function($f3, $params){
 });
 
 //Define a route that displays student detail
-$f3->route('GET|POST /add', function($f3, $params){
+$f3->route('GET|POST /add', function(){
 
     $GLOBALS['controller']->add();
 });

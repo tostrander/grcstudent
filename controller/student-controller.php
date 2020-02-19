@@ -1,15 +1,33 @@
 <?php
 
+/**
+ * Class StudentController
+ */
 class StudentController
 {
+    /**
+     * @var
+     */
     private $_f3;
+    /**
+     * @var
+     */
     private $_val;
 
-    public function __construct($f3) {
+    /**
+     * StudentController constructor.
+     * @param $f3
+     */
+    public function __construct($f3)
+    {
         $this->_f3 = $f3;
     }
 
-    public function home() {
+    /**
+     *
+     */
+    public function home()
+    {
         $students = $GLOBALS['db']->getStudents();
 
         $this->_f3->set('students', $students);
@@ -17,7 +35,11 @@ class StudentController
         echo $template->render('views/all-students.html');
     }
 
-    public function detail($sid) {
+    /**
+     * @param $sid
+     */
+    public function detail($sid)
+    {
 
         $student = $GLOBALS['db']->getDetails($sid);
 
@@ -32,7 +54,11 @@ class StudentController
         echo $template->render('views/student-detail.html');
     }
 
-    public function add() {
+    /**
+     *
+     */
+    public function add()
+    {
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
